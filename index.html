@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פנסיה אפ - שקט פנסיוני למעסיקים</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-navy: #1a2b49;
+            --accent-orange: #ff6b00;
+            --whatsapp-green: #25D366;
+            --light-bg: #f4f7f9;
+            --white: #ffffff;
+            --text-gray: #333333;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-navy);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 43, 73, 0.85), rgba(26, 43, 73, 0.85)), 
+                        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 900; }
+        .hero p { font-size: 1.3rem; margin-bottom: 40px; max-width: 800px; margin-inline: auto; }
+
+        /* עיצוב כפתור וואטסאפ מרכזי */
+        .whatsapp-main-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .whatsapp-main-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+            background-color: #20ba5a;
+        }
+
+        .whatsapp-main-btn i {
+            margin-left: 12px;
+            font-size: 1.6rem;
+        }
+
+        .section-title { text-align: center; color: var(--primary-navy); margin: 60px 0 40px; font-size: 2.2rem; }
+
+        .features { padding: 40px 5%; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background: var(--white);
+            padding: 30px;
+            border-right: 5px solid var(--accent-orange);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .how-it-works {
+            background-color: var(--light-bg);
+            padding: 80px 5%;
+            margin-top: 50px;
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-orange);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .pricing { padding: 80px 5%; background-color: var(--white); }
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .price-card {
+            background: var(--white);
+            padding: 40px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+        }
+        
+        .price-card h3 { color: var(--primary-navy); margin-bottom: 15px; }
+        .price-card .amount { font-size: 2.5rem; font-weight: 900; color: var(--accent-orange); }
+
+        .contact-cta {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        footer { background: #111; color: #ccc; padding: 40px 5%; text-align: center; font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+            .whatsapp-main-btn { width: 90%; padding: 12px 20px; font-size: 1.2rem; }
+            .whatsapp-main-btn i { font-size: 1.4rem; margin-left: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="font-size: 1.6rem; font-weight: 900; letter-spacing: 1px;">פנסיה אפ</div>
+    <div style="font-weight: 400;">נשאת גאנם: 052-5810047</div>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>המעסיק, מישהו שומר לך על הגב?</h1>
+        <p>מעטפת 360° לניהול פנסיוני חכם: שקט למעסיק, ביטחון לעובדים ושותפות אמיתית לדרך.</p>
+        
+        <a href="https://wa.me/972525810047?text=שלום%20נשאת,%20אני%20פונה%20דרך%20האתר%20ואשמח%20לקבל%20מידע%20על%20שקט%20פנסיוני%20לעסק%20שלי." 
+           class="whatsapp-main-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>אני רוצה שקט פנסיוני!
+        </a>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">למה העסק שלך חייב גורם מתפעל?</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>אובייקטיביות מלאה</h3>
+                <p>אנחנו סוכנות עצמאית העובדת מול כל חברות הביטוח. האינטרס שלנו הוא השגת התנאים הטובים ביותר עבורכם.</p>
+            </div>
+            <div class="feature-item">
+                <h3>צמצום סיכונים וקנסות</h3>
+                <p>ניהול מלא של ממשקי XML ובקרה בזמן אמת. אנחנו מונעים חשיפה לקנסות כבדים מהרגולטור.</p>
+            </div>
+            <div class="feature-item">
+                <h3>ליווי אישי אנושי</h3>
+                <p>פגישות אישיות עם כל עובד, שיחות קליטה והדרכות מקיפות על זכויות פנסיוניות וביטוחיות.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2 class="section-title">הדרך הפשוטה שלך לשקט נפשי</h2>
+        <div class="step-grid">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <h3>לחיצה על הכפתור</h3>
+                <p>פנייה מהירה בוואטסאפ או שיחת טלפון.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <h3>שיחת אפיון</h3>
+                <p>אנחנו יוצרים קשר להבנת הצרכים המדויקים שלכם.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <h3>תיאום נתונים</h3>
+                <p>איסוף המידע הדרוש ישירות מרואה החשבון.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <h3>שקט תפעולי</h3>
+                <p>ביצוע הפקדות, טיפול בהיזונים ושקט רגולטורי מלא.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <h2 class="section-title">עלויות תפעול שקופות (לפני מע"מ)</h2>
+        <div class="pricing-table">
+            <div class="price-card">
+                <h3>1-5 עובדים</h3>
+                <div class="amount">149 ₪</div>
+                <p>לחודש</p>
+            </div>
+            <div class="price-card">
+                <h3>6-10 עובדים</h3>
+                <div class="amount">249 ₪</div>
+                <p>לחודש</p>
+            </div>
+            <div class="price-card">
+                <h3>11-20 עובדים</h3>
+                <div class="amount">350 ₪</div>
+                <p>לחודש</p>
+            </div>
+        </div>
+        <p style="text-align:center; font-weight:700;">מעל 20 עובדים? רק 25 ₪ עבור כל עובד נוסף.</p>
+    </section>
+
+    <section class="contact-cta">
+        <h2>אל תחכה לקנס מהרגולטור</h2>
+        <p>תן לנו לנהל את הניירת, כדי שאתה תוכל לנהל את העסק. הכל שקוף וקל.</p>
+        <br>
+        <a href="https://wa.me/972525810047?text=שלום%20נשאת,%20אני%20מעוניין%20בבדיקת%20תפעול%20פנסיוני%20לעסק." 
+           class="whatsapp-main-btn" style="background-color: var(--accent-orange); box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);" target="_blank">
+            <i class="fab fa-whatsapp"></i>דבר איתי בוואטסאפ
+        </a>
+        <p style="margin-top:20px;">או התקשר עכשיו: 052-5810047</p>
+    </section>
+</main>
+
+<footer>
+    <p><strong>פנסיה אפ - ניהול תפעול פנסיוני חכם </strong></p>
+    <p>סוכנות ביטוח עצמאית וגורם מתפעל מוסמך</p>
+    <p>נשאת גאנם | nashatg@selam.co.il</p>
+</footer>
+
+</body>
+</html>
